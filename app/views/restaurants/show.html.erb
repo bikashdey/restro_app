@@ -17,7 +17,7 @@
     </div>
   <div class="card-body">
    <%= link_to "Edit",edit_restaurant_path(@restaurant), class:"card-link" %>
-    <%= link_to "Destroy", restaurant_path, method: :delete %>
+    <%= link_to "Destroy", {:controller => "restaurants", :action => "destroy", :id => @restaurant.id}%>
   </div>
   <%= form_with model: @restaurant do |form| %>
     <div>
@@ -25,9 +25,27 @@
       <%= form.select :status, Restaurant.statuses.keys.to_a %><br>
     </div>
     <div>
-      <%= form.submit %>
+      <%= link_to 'update status', {:controller => "restaurants", :action => :update_restro_status, :id => @restaurant.id}, method: :patch %>
     </div>
   <% end %>
+
+</div>
+
+<div>
+   <%= form_with model: @restaurant do |form| %>
+    <div>
+      <%= form.label :rating %><br>
+      <%= form.text_field :rating %>
+    </div>
+    <div>
+      <%= form.label :comment %><br>
+      <%= form.text_area :comment %>
+    </div>
+
+    <div>
+      <%= form.submit "post comment", create_reviews_restaurant_path(:id => @restaurant) %>
+    </div>
+  <% end %> 
 
 </div>
 
