@@ -1,0 +1,21 @@
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-3">
+  <% @restaurants.each do | restaurant | %>
+    <div class="col">
+      <div class="card shadow-sm">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: " preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"> </text></svg>
+        <div class="card-body">
+          <h5 class="card-title"><%= restaurant.name %></h5>
+          <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary"><%= restaurant.city %></button>
+              <button type="button" class="btn btn-sm btn-outline-secondary"><%= restaurant.restro_type %></button>
+              <%= link_to 'view',restaurant_path(restaurant.id), class:"btn btn-sm btn-outline-secondary" %>
+            </div>
+            <small class="text-muted">Reviews</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

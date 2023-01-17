@@ -1,0 +1,45 @@
+<div class="card" style="width: 18rem;">
+    <div class="col">
+      <div class="card shadow-sm">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: " preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"> </text></svg>
+        <div class="card-body">
+          <h5 class="card-title"><%= @restaurant.name %></h5>
+          <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary"><%= @restaurant.city %></button>
+              <button type="button" class="btn btn-sm btn-outline-secondary"><%= @restaurant.restro_type %></button>
+            </div>
+            <small class="text-muted">Reviews</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="card-body">
+   <%= link_to "Edit",edit_restaurant_path(@restaurant), class:"card-link" %>
+    <%= link_to "Destroy", restaurant_path, method: :delete %>
+  </div>
+  <%= form_with model: @restaurant do |form| %>
+    <div>
+      <%= form.label :status %><br>
+      <%= form.select :status, Restaurant.statuses.keys.to_a %><br>
+    </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+</div>
+
+<div>
+  <h5> Reviews </h5>
+  <% @restaurant.reviews.each  do |review| %>
+    <div class="d-flex justify-content-between align-items-center" style="border-style: solid; border-width:thin; border-color: black width: 50%;"> 
+      <ul>
+        <li> Rating: <%= review.rating %> </li> 
+        <li> Comment: <%= review.comment %> </li> 
+      <ul>
+    </div>
+  <% end %>
+
+</div>

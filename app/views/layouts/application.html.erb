@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RestroApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+    <!-- Header Started -->
+    <header class="p-3 text-bg-dark">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            Restro
+          </a>
+
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <% if current_user.present? and current_user.Admin? %>
+              <li> <%= link_to "Add Resturant",new_restaurant_path,  class:"nav-link px-2 text-white" %></li>
+            <% else %>
+            <li> <%= link_to "All Resturant",restaurants_path,  class:"nav-link px-2 text-white" %></li>
+            <% end %>
+            <!-- <li><%#= link_to "All Dishes", dishes_path, class:"nav-link px-2 text-white" %></li> -->
+          </ul>
+          <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+<!--               <form class="d-flex" role="search" action= "/search_restro">
+                <input class="form-control me-2" name = "dish_id" type="search" placeholder="Search Restro by Dishes" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form> -->
+              <label for="dishes">Search Restro by dish  </label>
+              <select name="dishes" id="dishes">
+                  <% dishes = Dish.all %>
+                  <% dishes.each do |dish| %>
+                    <option value="dish"><%= dish.name %></option>
+                  <% end %>
+              </select>
+                 <button class="btn btn-outline-success" type="submit">Search</button>
+            </div>
+          </nav>
+          <ul class="nav col-12 col-lg-auto mb-2 ms-auto justify-content-center mb-md-0">
+            <li> 
+              <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:"btn btn-outline-light me-2" if current_user %>
+            </li>
+            <li>
+              <%= link_to 'Register', new_user_registration_path, class:"btn btn-outline-light me-2" if !current_user %>
+              <%= link_to 'Sign in', new_user_session_path, class:"btn btn-outline-light me-2" if !current_user %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- Header Ended -->
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
+

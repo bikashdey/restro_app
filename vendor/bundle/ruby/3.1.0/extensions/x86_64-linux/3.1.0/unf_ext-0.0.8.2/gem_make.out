@@ -1,0 +1,16 @@
+current directory: /home/developer/Downloads/restro_dish_app/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+/home/developer/.rvm/rubies/ruby-3.1.2/bin/ruby -I /home/developer/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0 -r ./siteconf20230117-172128-k2lmp8.rb extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /home/developer/Downloads/restro_dish_app/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= clean
+
+current directory: /home/developer/Downloads/restro_dish_app/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\=
+compiling unf.cc
+linking shared-object unf_ext.so
+
+current directory: /home/developer/Downloads/restro_dish_app/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= install
+/usr/bin/install -m 0755 unf_ext.so ./.gem.20230117-172128-g484bg

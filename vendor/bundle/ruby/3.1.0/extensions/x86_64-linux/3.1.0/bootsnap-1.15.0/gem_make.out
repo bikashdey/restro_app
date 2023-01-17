@@ -1,0 +1,15 @@
+current directory: /home/developer/restro_app/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.15.0/ext/bootsnap
+/home/developer/.rvm/rubies/ruby-3.1.2/bin/ruby -I /home/developer/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0 -r ./siteconf20230112-79695-x64d1z.rb extconf.rb
+creating Makefile
+
+current directory: /home/developer/restro_app/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /home/developer/restro_app/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/developer/restro_app/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -m 0755 bootsnap.so ./.gem.20230112-79695-i3x2gw/bootsnap

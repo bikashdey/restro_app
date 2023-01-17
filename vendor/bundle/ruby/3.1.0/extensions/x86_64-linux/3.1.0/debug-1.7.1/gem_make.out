@@ -1,0 +1,16 @@
+current directory: /home/developer/restro_app/vendor/bundle/ruby/3.1.0/gems/debug-1.7.1/ext/debug
+/home/developer/.rvm/rubies/ruby-3.1.2/bin/ruby -I /home/developer/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0 -r ./siteconf20230112-79695-j4z9gk.rb extconf.rb
+creating Makefile
+
+current directory: /home/developer/restro_app/vendor/bundle/ruby/3.1.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= clean
+
+current directory: /home/developer/restro_app/vendor/bundle/ruby/3.1.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/developer/restro_app/vendor/bundle/ruby/3.1.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= install
+/usr/bin/install -m 0755 debug.so ./.gem.20230112-79695-uuds70/debug

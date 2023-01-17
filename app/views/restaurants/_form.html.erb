@@ -1,0 +1,42 @@
+<%= form_with model: restaurant do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div>
+    <%= form.label :state %><br>
+    <%= form.text_field :state %>
+  </div>
+  
+  <div>
+    <%= form.label :phone_number %><br>
+    <%= form.text_field :phone_number%>
+  </div>
+  
+  <div>
+    <%= form.label :restro_type %><br>
+    <%= form.text_field :restro_type %>
+  </div>
+  
+  <div>
+    <%= form.label :city %><br>
+    <%= form.text_field :city %><br>
+  </div>
+  
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, Restaurant.statuses.keys.to_a %><br>
+  </div>
+
+  
+  <div>
+    <%= form.label :dishes %><br>
+    <%= form.select :dishes, Dish.all.map { |i| i.name }  %><br>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>
